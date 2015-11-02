@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Set meta properties -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Data Request</title>
+		
+		<!-- Libraries -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+		
+		<!-- Scripts -->
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/main.js"></script>
+
+	</head>
+	<body>
+		<header><img src="http://1.bp.blogspot.com/-1X-kgAXK_bs/USOWWN-xu1I/AAAAAAAAAXM/4c9kLfJSrV4/s1600/madlibslogo.png"</img></header>
+		
+		<!-- Instructions -->
+		<div class="container" id="instructions">
+			<b>Instructions:</b> Build an angular application that replicates the classic game MadLibs.  Users should be able to edit the form, and watch their updates happen live in the story.  You should create default values for the story when you create your controller in your JavaScript file.
+		</div>
+
+
+
+		<!-- Bind your application to this controller -->
+		<div id="madlib">
+			
+		</div>
+
+		<!-- Initiate you application.  -->
+		<div ng-app="myApp" ng-controller="madCtrl">
+
+			<!-- Story: bind your variables where appropriate -->
+			<p id="story">
+				This is a story about <text ng-bind="name"></text>. 
+				<text ng-bind="name"></text> is <text ng-bind="age"></text>
+				years old.  One day, <text ng-bind="name"></text> went to 
+				<text ng-bind="location"></text> and ate <text ng-bind="food"></text>. 
+			</p>
+
+			<!-- Form: associate the appropriate model with each input element -->
+			<form>
+				<!-- Name -->
+				<label for="name">Name:</label>
+				<input class="form-control" ng-model="name" id="name"></input><br/>
+
+				<!-- Age -->
+				<label for="age">Age:</label>
+				<input class="form-control" ng-model="age" id="age"></input><br/>
+
+				<!-- Location -->
+				<label for="location">Location:</label>
+				<input class="form-control" ng-model="location" id="location"></input><br/>
+
+				<!-- Food -->
+				<label for="food">Food:</label>
+				<input class="form-control" ng-model="food" id="food"></input><br/>
+			</form>			
+		</div>
+	</body>
+</html>
