@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Set meta properties -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Data Request</title>
+		
+		<!-- Libraries -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+		
+		<!-- Scripts -->
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/main.js"></script>
+
+	</head>
+	<body>
+		<header><h3>Angular Data Request Practice</h3></header>
+		
+		<!-- Instructions -->
+		<div class="container" id="instructions">
+			<b>Instructions</b>
+			<ol>		
+				<li>Create an angular module called <code>myApp</code> in your JavaScript code (<a href="http://www.w3schools.com/angular/angular_modules.asp" target="_blank">documentation</a>)</li>
+    			
+    			<li>Add a contrller to your module called <code>customersCtrl</code>, whose execution function takes in two parameters: <code>$scope</code> and <code>$http</code></li>
+    			
+    			<li>Make an <code>$http.get</code> request to the following URL (<a href="https://docs.angularjs.org/api/ng/service/$http" target="_blank">documentation</a>): <pre>http://www.w3schools.com/angular/customers.php</pre></li>
+    			
+    			<li>When your <code>$http.get</code> request is successful, set the variable <code>$scope.names</code> equal to the records in the response's data.</li>
+    
+    			<li>In your HTML, bind your application to the <code>&ltdiv&gt</code> below using the <code>ng-app</code> and <code>ng-controller</code> directives.</li>
+
+    			<li>Inside the <code>&ltul&gt</code> below, use the <code>ng-repeat</code> directive to create an <code>&ltli&gt</code> for each element in your <code>$scope.names</code> variable</li>
+
+    			<li>In each <code>&ltli&gt</code> that you create, use an angular expression to show some information about each record</li>
+			</ol>
+		</div>
+
+
+
+
+		<!-- Bind your application to this controller -->
+		<div class="container" ng-app="myApp" ng-controller="customersCtrl">			
+			<ul>
+				<!-- Create your <li> elements in here!  -->
+				<li ng-repeat="name in names">{{name.Name + ' located in ' + name.City + ', ' + name.Country}}</li>
+			</ul>
+		</div>
+	</body>
+</html>
